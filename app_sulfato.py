@@ -577,7 +577,7 @@ def generar_pdf_equivalencia(producto, kg_base, precio_base, precio_nitro, n_pro
 
     story.append(Paragraph(f"<b>Lectura comercial:</b> {lectura}", normal))
     story.append(Spacer(1, 16))
-    story.append(Paragraph("Herramienta comercial de apoyo. Verificar precios y condiciones antes de presentar una cotización.", subtitle_style))
+    story.append(Paragraph("Este archivo no es una cotización oficial; es una herramienta comercial de apoyo para mostrar eficiencias de productos ISAOSA. Los precios pueden variar de acuerdo con la fecha, zona de cotización, distribuidor, tipo de cambio y demás condiciones comerciales aplicables.", subtitle_style))
 
     doc.build(story)
     buffer.seek(0)
@@ -667,7 +667,7 @@ def generar_pdf_urea(precio_urea, precio_nitro, costo_urea, costo_nitro, diferen
 
     story.append(Paragraph(f"<b>Lectura comercial:</b> {lectura}", normal))
     story.append(Spacer(1, 16))
-    story.append(Paragraph("Herramienta comercial de apoyo. Verificar precios y condiciones antes de presentar una cotización.", subtitle_style))
+    story.append(Paragraph("Este archivo no es una cotización oficial; es una herramienta comercial de apoyo para mostrar eficiencias de productos ISAOSA. Los precios pueden variar de acuerdo con la fecha, zona de cotización, distribuidor, tipo de cambio y demás condiciones comerciales aplicables.", subtitle_style))
 
     doc.build(story)
     buffer.seek(0)
@@ -688,7 +688,6 @@ N_NITRO = 38.0
 inject_css()
 render_hero("Sulfato de Amonio vs Nitroperfecto", "Calcula la equivalencia de dosis y compara el costo.")
 
-st.markdown('<div class="soft-card">', unsafe_allow_html=True)
 st.markdown('<div class="section-title">Ingresa los datos</div>', unsafe_allow_html=True)
 st.markdown('<div class="section-copy">Captura dosis y precios para calcular la equivalencia.</div>', unsafe_allow_html=True)
 
@@ -704,7 +703,6 @@ with st.form("form"):
 
     calcular = st.form_submit_button("Calcular comparación")
 
-st.markdown('</div>', unsafe_allow_html=True)
 
 if calcular:
     try:
